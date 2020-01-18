@@ -1,0 +1,26 @@
+{% extends 'thisApp/base.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+<div class='container'}>
+    <div class='row'>
+        <div class='col-sm-6'>
+           <h5>You Are Logged Out<h5>
+            <small>Already Have An Account? <a href='{% url "login" %}' class='ml-2'>log In</a>
+            </small>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock content %}

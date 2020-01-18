@@ -1,0 +1,33 @@
+{% extends 'thisApp/base.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+<div class='container'}>
+    <div class='row'>
+        <div class='col-sm-6' style="margin-top: 50px;">
+            <img class="img" src="{{user.profiles.image.url}}" width="50px;" heigth="50px;">
+            <h5 style="margin-top: 10px;">{{user.username}}</h5>
+            <h5>{{user.email}}</h5>
+            <form method ="POST" enctype="multipart/form-data">    
+             {% csrf_token %}
+             <fieldset class='form-group'>
+                <legend class="text-muted"><a href="#">Update</a></legend>
+                {{u_form|crispy}}
+                {{p_form|crispy}}
+             </fieldset>
+             <button type='submit' style="border-radius: 10px;">Submit</button>
+            </form> 
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+{% endblock content %}
